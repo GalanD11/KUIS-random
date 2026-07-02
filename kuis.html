@@ -670,7 +670,7 @@ const db = getFirestore(fbApp);
     const bar = el('feedback-bar');
     bar.classList.remove('hidden','ok','no');
     bar.classList.add(correct ? 'ok' : 'no');
-    el('feedback-title').textContent = correct ? 'Betul! 🎉' : 'Kurang tepat 😅';
+    el('feedback-title').textContent = correct ? 'Betul!' : 'Kurang tepat';
     el('feedback-explain').textContent = q.exp;
   }
 

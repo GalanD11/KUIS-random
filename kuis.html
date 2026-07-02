@@ -436,10 +436,10 @@
       </svg>
     </div>
     <h2 class="gate-title">Isi Data buat Hadiah</h2>
-    <p class="gate-sub">Nomor dipakai <b>khusus buat kirim hadiah</b> kalau masuk ranking leaderboard.</p>
+    <p class="gate-sub">Nomor kamu dipakai <b>khusus buat kirim hadiah</b> kalau masuk ranking leaderboard. Bukan buat bayar apa pun.</p>
 
     <label class="field-label">Nama (tampil di leaderboard)</label>
-    <input type="text" class="field-input" id="input-name" placeholder="Contoh: Budi" maxlength="20">
+    <input type="text" class="field-input" id="input-name" placeholder="Contoh: Arya" maxlength="20">
 
     <label class="field-label">Pilih metode</label>
     <div class="method-row">
@@ -448,7 +448,7 @@
     </div>
 
     <label class="field-label" id="field-label-num">Nomor DANA</label>
-    <input type="tel" class="field-input" id="input-phone" placeholder="Contoh: 0812-4413-1111" maxlength="16">
+    <input type="tel" class="field-input" id="input-phone" placeholder="Contoh: 0812-3456-7890" maxlength="16">
     <div class="field-hint">Di leaderboard nomor ini akan disensor (mis. 0812****90), hanya kamu/panitia yang pegang datanya penuh.</div>
 
     <div class="mock-note">ℹ️ <span>Data ini tersimpan di penyimpanan bersama artifact ini. Isi nomor asli hanya kalau kamu memang mau ikut giveaway &amp; percaya sama penyelenggaranya.</span></div>
@@ -517,7 +517,6 @@
 
     <div class="lb-title">🏆 Papan Peringkat</div>
     <div class="lb-list" id="lb-list"></div>
-    <button class="btn btn-outline" id="btn-reset" style="margin-top:14px;font-size:12px;">Reset (mode testing)</button>
   </div>
 
 </div>
@@ -756,11 +755,6 @@ const db = getFirestore(fbApp);
   }
 
   // ---------------- Init: cek status attempt ----------------
-  el('btn-reset').addEventListener('click', ()=>{
-    try{ localStorage.removeItem('quiz_status'); }catch(e){}
-    location.reload();
-  });
-
   async function init(){
     try{
       const raw = localStorage.getItem('quiz_status');
